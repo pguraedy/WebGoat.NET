@@ -63,6 +63,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Data.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Web">
       <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Web.dll</HintPath>
@@ -1081,6 +1082,7 @@
     <None Include="Downloads\csrf.pdf" />
     <None Include="Downloads\transport_layer.pdf" />
     <None Include="Downloads\architecture.pdf" />
+    <None Include="packages.config" />
     <None Include="TODO.txt" />
     <None Include="DB_Scripts\create_webgoatcoins.sql" />
     <None Include="DB_Scripts\load_webgoatcoins.sql" />
