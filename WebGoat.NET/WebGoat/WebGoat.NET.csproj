@@ -61,12 +61,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Data.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\lib\mysql.data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Web">
-      <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Web.dll</HintPath>
+    <Reference Include="mysql.web">
+      <HintPath>..\..\..\..\..\..\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\lib\mysql.web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
