@@ -275,7 +275,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             
             try
             {
-                //sql injection
+                
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     connection.Open();
