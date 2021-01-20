@@ -294,17 +294,16 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public string UpdateCustomerPassword(int customerNumber, string password)
         {
-            string sql = "update CustomerLogin set password = '" + Encoder.Encode(password) + "' where customerNumber = " + customerNumber;
-            string output = null;
             try
             {
-            //sql injection
-                using (MySqlConnection connection = new MySqlConnection(_connectionString))
+                using (MySqlCommand command = connection.CreateCommand())
                 {
-                    MySqlCommand command = new MySqlCommand(sql, connection);
-                
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "update CustomerLogin set password = @password where customerNumber = @customerNumber";
+
+                    command.Parameters.Add(new MySqlParameter("@CustomerNumber", customerNumber));
+                    command.Parameters.Add(new MySqlParameter("@password", Encoder.Encode(password)));
                     int rows_added = command.ExecuteNonQuery();
-                    
                     log.Info("Rows Added: " + rows_added + " to comment table");
                 }
             }
