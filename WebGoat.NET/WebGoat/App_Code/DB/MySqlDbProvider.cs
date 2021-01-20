@@ -296,7 +296,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             try
             {
-                using (MySqlCommand command = connection.CreateCommand())
+                using (MySqlCommand command = new MySqlCommanid(_connectionString))
                 {
                     command.CommandType = CommandType.Text;
                     command.CommandText = "update CustomerLogin set password = @password where customerNumber = @customerNumber";
