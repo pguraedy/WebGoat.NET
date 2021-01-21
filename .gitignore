@@ -1,5 +1,14 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# Project Files #
+#################
+*.userprefs
+*.pidb
+bin
+obj
+WebGoat/App_Data/*.txt
+*.sqlite
+WebGoat/Configuration/*.config
 
-/WebGoat.NET.zip
+# Trash Files #
+###############
+.DS_Store
+/.vs

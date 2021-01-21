@@ -1,14 +1,12 @@
-C:\Users\guraedy\Source\Repos\pguraedy\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csprojAssemblyReference.cache
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\DotNetGoat.dll.config
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\DotNetGoat.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\DotNetGoat.pdb
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\log4net.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\Mono.Data.Sqlite.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\MySql.Data.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\MySql.Web.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\MySql.Data.xml
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\MySql.Web.xml
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\bin\log4net.xml
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
-C:\Users\guraedy\source\repos\pguraedy\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.pdb
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\DotNetGoat.dll.config
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\DotNetGoat.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\DotNetGoat.pdb
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\log4net.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\Mono.Data.Sqlite.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\mysql.data.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\mysql.web.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\bin\log4net.xml
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CoreCompileInputs.cache
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.pdb
