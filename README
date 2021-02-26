@@ -1,3 +1,7 @@
+To have this work with Fortify SCA, a local Azure Devops agent has to be installed on the scanning (local) machine.
+Additionally, the MySQL Connector 7.0.7 needs to be installed on the scanning (local) machine. Otherwise you will 
+receive an error saying that the object or namespace 'MySQL' can't be found.
+
 ***************************** Webgoat.NET *************************************
 * Source Code: https://github.com/jerryhoff/WebGoat.NET
 * Download zip: https://github.com/jerryhoff/WebGoat.NET/zipball/master
