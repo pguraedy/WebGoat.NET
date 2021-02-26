@@ -275,7 +275,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             
             try
             {
-                
+
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     connection.Open();
@@ -298,13 +298,13 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             string output = null;
             try
             {
-                //sql
+            
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     MySqlCommand command = new MySqlCommand(sql, connection);
-
+                
                     int rows_added = command.ExecuteNonQuery();
-
+                    
                     log.Info("Rows Added: " + rows_added + " to comment table");
                 }
             }
