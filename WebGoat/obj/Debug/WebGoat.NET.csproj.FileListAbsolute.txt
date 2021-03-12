@@ -22,3 +22,4 @@ C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\De
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.pdb
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csprojAssemblyReference.cache
