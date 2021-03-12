@@ -1107,5 +1107,4 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(MSBuildAssemblyVersion)\WebApplications\Microsoft.WebApplication.targets" />
 </Project>
