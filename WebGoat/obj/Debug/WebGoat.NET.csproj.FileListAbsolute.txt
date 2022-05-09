@@ -10,6 +10,7 @@ C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\We
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.pdb
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\DotNetGoat.dll.config
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\DotNetGoat.dll
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\DotNetGoat.pdb
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\log4net.dll

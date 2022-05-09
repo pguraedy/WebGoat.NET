@@ -1,0 +1,16 @@
+initscript {
+  repositories {
+      jcenter()
+  }  
+  dependencies {
+    classpath files(
+      '../../lib/gson-2.2.4.jar',
+      '../../lib/gradle-plugin-21.2.3.0002.jar',
+      '../../lib/project-packager-21.2.3.0002.jar'
+    )
+  }
+}
+
+allprojects {
+  apply plugin: com.fortify.cloud.plugins.gradle.GenerateProjectSpecPlugin
+}
