@@ -46,6 +46,7 @@ C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\Go
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\K4os.Compression.LZ4.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\K4os.Compression.LZ4.Streams.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\K4os.Hash.xxHash.xml
+C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\log4net.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Data.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Data.Entity.EF6.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\MySql.Web.xml
@@ -58,7 +59,6 @@ C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\Sy
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\System.Web.WebPages.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\System.Web.WebPages.Deployment.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\System.Web.WebPages.Razor.xml
-C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\log4net.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\WebMatrix.Data.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\WebMatrix.WebData.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csprojAssemblyReference.cache
