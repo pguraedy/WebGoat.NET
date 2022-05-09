@@ -61,7 +61,6 @@ C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\Sy
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\System.Web.WebPages.Razor.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\WebMatrix.Data.xml
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\bin\WebMatrix.WebData.xml
-C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csprojAssemblyReference.cache
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CoreCompileInputs.cache
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
 C:\Users\guraedy\OneDrive - Micro Focus\Source\GitHub\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
