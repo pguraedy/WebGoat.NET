@@ -12,7 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 
 namespace OWASP.WebGoat.NET
 {
-    //test commit j
+    //test commit
 	public partial class AddNewUser : System.Web.UI.Page
 	{
 		const string passwordQuestion = "What is your favorite color";
