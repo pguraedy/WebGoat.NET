@@ -1,4 +1,11 @@
-- name: Debricked Vulnerability Scan
-  # You may pin to the exact commit or the version.
-  # uses: debricked/actions@3a23c0b4689c231887ffe1f29ac8b0b20e38de62
-  uses: debricked/actions@v1
+name: Vulnerability scan
+
+on: [push, pull_request]
+
+jobs:
+  vulnerabilities-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: debricked/actions/scan@v1
