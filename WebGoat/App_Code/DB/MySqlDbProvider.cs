@@ -11,6 +11,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 {
     public class MySqlDbProvider : IDbProvider
     {
+        //variables
         private readonly string _connectionString;
         private readonly string _host;
         private readonly string _port;
