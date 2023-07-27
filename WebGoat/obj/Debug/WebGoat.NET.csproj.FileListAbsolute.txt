@@ -85,7 +85,9 @@ C:\Source\VSTS\WebGoat.NET\WebGoat\bin\DotNetGoat.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\DotNetGoat.pdb
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\log4net.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\Mono.Data.Sqlite.dll
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\mysql.data.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\log4net.xml
+C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.AssemblyReference.cache
 C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CoreCompileInputs.cache
 C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CopyComplete
 C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\DotNetGoat.dll
