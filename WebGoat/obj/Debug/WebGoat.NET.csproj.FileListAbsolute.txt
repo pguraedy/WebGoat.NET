@@ -83,9 +83,15 @@ C:\Users\phili\OneDrive - OpenText\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\Dot
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\DotNetGoat.dll.config
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\DotNetGoat.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\DotNetGoat.pdb
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\Google.Protobuf.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\log4net.dll
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\Mono.Data.Sqlite.dll
-C:\Source\VSTS\WebGoat.NET\WebGoat\bin\mysql.data.dll
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\MySql.Data.dll
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\System.Numerics.Vectors.dll
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\System.Buffers.dll
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\Google.Protobuf.pdb
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\Google.Protobuf.xml
+C:\Source\VSTS\WebGoat.NET\WebGoat\bin\MySql.Data.xml
 C:\Source\VSTS\WebGoat.NET\WebGoat\bin\log4net.xml
 C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.AssemblyReference.cache
 C:\Source\VSTS\WebGoat.NET\WebGoat\obj\Debug\WebGoat.NET.csproj.CoreCompileInputs.cache
