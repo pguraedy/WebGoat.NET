@@ -11,3 +11,6 @@ WebGoat/Configuration/*.config
 # Trash Files #
 ###############
 .DS_Store
+/.vs/WebGoat.NET/FileContentIndex/d363cb68-788e-4291-af49-662483d7da77.vsidx
+/Backup
+/UpgradeLog.htm
