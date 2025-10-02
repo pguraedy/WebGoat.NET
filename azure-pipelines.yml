@@ -144,7 +144,7 @@ steps:
   inputs:
     providerType: 'fod'
     fodUrl: 'https://api.ams.fortify.com'
-    fodApiKey: '$(FORTIFY_API_KEY)'
-    fodApiSecret: '$(FORTIFY_API_SECRET)'
+    fodApiKey: 'c2YzMCE_SXVzaHRMYW5BNVtLb2ZQNEVqV3hpbDF50'
+    fodApiSecret: 'NVtLb2ZQpbDc2YzMCE_SXVzaHRMYW5BF50NEVqV3h'
     appName: 'WebGoat (NET)'
     appVersion: 'phil_test'
