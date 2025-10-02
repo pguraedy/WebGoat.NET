@@ -14,9 +14,9 @@ variables:
 - name: BuildParameters.sscUrl
   value: http://usguraedy02:8081/ssc/
 - name: FORTIFY_API_KEY
-  value: c2YzMCE_SXVzaHRMYW5BNVtLb2ZQNEVqV3hpbDF50
+  value: 5bca5531-60dc-4e97-a90e-14eb02867cbf
 - name: FORTIFY_API_SECRET
-  value: NVtLb2ZQpbDc2YzMCE_SXVzaHRMYW5BF50NEVqV3h
+  value: NlMzTml5MGZQYllyaWFWPHAvdktDcnc1OGlEU3Ep0
 trigger:
   branches:
     include:
