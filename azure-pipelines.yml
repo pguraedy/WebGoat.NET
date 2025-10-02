@@ -74,7 +74,7 @@ jobs:
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
   - task: FortifyOnDemandStatic@8
     displayName: Run Fortify on Demand static assessment
-    enabled: False
+    enabled: true
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
       ScanCentralLocation: Fortify_ScanCentral_Client/bin
