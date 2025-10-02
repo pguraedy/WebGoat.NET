@@ -89,17 +89,6 @@ jobs:
       BuildType: msbuild
       PollingInterval: 0
       PolicyFailAction: 0
-  - task: FortifySCA@7
-    displayName: Fortify SCA Scan
-    inputs:
-      licenseFile: C:\tomcat\fortify.license
-      buildSourceVersion: 1.5
-      fortifyBuildId: WebGoat
-      runFortifyUpload: true
-      fortifyServerName: e27367ba-fb87-4e94-b01b-c8c3cfefecc4
-      fortifyApplicationName: WebGoat.NET
-      fortifyApplicationVersion: Dev
-      fortifyBuildFailureCriteria: '[fortify priority order]:critical'
   - task: NexusIqPipelineTask@1
     displayName: Nexus IQ policy evaluation
     enabled: False
@@ -152,15 +141,6 @@ jobs:
       scanCentralDastApiUrl: ' http://usguraedy02:8281/dastsensor'
       scanCentralCiCdToken: 8792453780
       sscCiToken: $(BuildParameters.sscCiToken)
-  - task: NexusIqPipelineTask@2
-    displayName: Sonatype IQ policy evaluation
-    inputs:
-      nexusIqService: 4e4bb6aa-3fcd-4dfc-9e08-e493c980ecc0
-      organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
-      applicationId: WebGoat.NET
-      stage: source
-      scanTargets: '**'
-      enableReachability: true
   - task: FortifyReport@13
     inputs:
       providerType: 'fod'
