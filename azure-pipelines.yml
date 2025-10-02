@@ -4,7 +4,7 @@ variables:
 - name: BuildParameters.ArtifactName
   value: drop
 - name: BuildParameters.FortifyProjects
-  value: WebGoat
+  value: WebGoatReport
 - name: BuildParameters.sscCiToken
   value: d36ccf73-5cb2-470a-9c4f-ed3e342f6194
 - name: BuildParameters.scanCentralClientToken
@@ -25,7 +25,7 @@ trigger:
 name: $(date:yyyyMMdd)$(rev:.r)
 jobs:
 - job: Job_1
-  displayName: Build WebGoat.NET
+  displayName: Build WebGoat.NET Report
   pool:
     name: Fortify
   steps:
