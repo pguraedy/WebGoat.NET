@@ -1,0 +1,151 @@
+variables:
+- name: BuildParameters.solution
+  value: '**\*.sln'
+- name: BuildParameters.ArtifactName
+  value: drop
+- name: BuildParameters.FortifyProjects
+  value: WebGoat
+- name: BuildParameters.sscCiToken
+  value: d36ccf73-5cb2-470a-9c4f-ed3e342f6194
+- name: BuildParameters.scanCentralClientToken
+  value: 0a9ee484-2ef1-4d50-91e1-2eab2cdf1542
+- name: BuildParameters.scanCentralCtrlUrl
+  value: http://usguraedy02:8883/scancentral-ctrl
+- name: BuildParameters.sscUrl
+  value: http://usguraedy02:8081/ssc/
+- name: FORTIFY_API_KEY
+  value: c2YzMCE_SXVzaHRMYW5BNVtLb2ZQNEVqV3hpbDF50
+- name: FORTIFY_API_SECRET
+  value: NVtLb2ZQpbDc2YzMCE_SXVzaHRMYW5BF50NEVqV3h
+trigger:
+  branches:
+    include:
+    - master
+  batch: True
+name: $(date:yyyyMMdd)$(rev:.r)
+jobs:
+- job: Job_1
+  displayName: Build WebGoat.NET
+  pool:
+    name: Fortify
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: NuGetToolInstaller@1
+    displayName: Use NuGet 6.13.2
+    inputs:
+      versionSpec: 6.13.2
+  - task: NuGetCommand@2
+    displayName: NuGet restore
+    inputs:
+      solution: $(BuildParameters.solution)
+  - task: VSBuild@1
+    displayName: Build solution
+    inputs:
+      solution: $(BuildParameters.solution)
+      vsVersion: "17.0"
+      msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
+      msbuildArchitecture: x64
+  - task: VSTest@2
+    displayName: Test Assemblies
+    inputs:
+      testAssemblyVer2: >-
+        **\$(BuildConfiguration)\*test*.dll
+
+        !**\obj\**
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
+  - task: PublishSymbols@2
+    displayName: Publish symbols path
+    continueOnError: True
+    inputs:
+      SearchPattern: '**\bin\**\*.pdb'
+      PublishSymbols: false
+      SymbolServerType: TeamServices
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact
+    condition: succeededOrFailed()
+    inputs:
+      PathtoPublish: $(build.artifactstagingdirectory)
+      ArtifactName: $(BuildParameters.ArtifactName)
+      TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
+  - task: FortifyOnDemandStatic@8
+    displayName: Run Fortify on Demand static assessment
+    enabled: False
+    inputs:
+      FortifyProjects: $(BuildParameters.FortifyProjects)
+      ScanCentralLocation: Fortify_ScanCentral_Client/bin
+      FodConnection: b1e932bd-31c6-46cf-b212-65124515961c
+      ReleaseOptions: 0
+      ReleaseId: 229633
+      EntitlementSelection: 1
+      EntitlementPreference: 1
+      OverrideScanSettings: 2
+      InProgressScanActionType: 1
+      RemediationScanPreference: 2
+      BuildType: msbuild
+      PollingInterval: 0
+      PolicyFailAction: 0
+  - task: NexusIqPipelineTask@1
+    displayName: Nexus IQ policy evaluation
+    enabled: False
+    inputs:
+      nexusIqService: 23e49b71-9330-4065-bc03-9fb5a10ac018
+      organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
+      applicationId: WebGoat.NET
+      stage: release
+  - task: FortifyDynamicAssessment@7
+    displayName: 'Run Fortify WebInspect dynamic assessment on '
+    enabled: False
+    inputs:
+      ScanSettings: default
+      APIRoot: adsffs7893456879jkdfskj
+      ScanResultsLocation: ssc_repo
+  - task: FortifyOnDemandDynamic@7
+    displayName: 'Run Fortify on Demand dynamic assessment on '
+    enabled: False
+    inputs:
+      ReleaseId: 214568
+      APIKey: '$(FORTIFY_API_KEY)'
+      APISecret: '$(FORTIFY_API_SECRET)'
+      PurchaseEntitlements: false
+      PreferRemediation: false
+  - task: FortifyScanCentralSAST@7
+    displayName: Fortify ScanCentral SAST Assessment
+    enabled: False
+    inputs:
+      scanCentralCtrlUrl: $(BuildParameters.scanCentralCtrlUrl)
+      scanCentralClientToken: $(BuildParameters.scanCentralClientToken)
+      sscUrl: $(BuildParameters.sscUrl)
+      sscCiToken: $(BuildParameters.sscCiToken)
+      uploadToSSC: true
+      applicationName: WebGoat.NET
+      applicationVersion: 2.3
+      applicationVersionId: 78902
+      buildTool: msbuild
+      buildFile: WebGoat.NET.sln
+      skipBuild: false
+      excludeDisabledProjects: false
+      includeTest: false
+      includeNodeModules: false
+      overwrite: false
+      quiet: false
+      downloadDebugLogs: false
+  - task: FortifyScanCentralDAST@7
+    displayName: Fortify ScanCentral DAST Assessment
+    enabled: False
+    inputs:
+      scanCentralDastApiUrl: ' http://usguraedy02:8281/dastsensor'
+      scanCentralCiCdToken: 8792453780
+      sscCiToken: $(BuildParameters.sscCiToken)
+  - task: FortifyReport@13
+    inputs:
+      providerType: 'fod'
+      fodUrl: 'https://api.ams.fortify.com'
+      fodApiKey: '$(FORTIFY_API_KEY)'
+      fodApiSecret: '$(FORTIFY_API_SECRET)'
+      appName: 'WebGoat (NET)'
+      appVersion: 'phil_test'
