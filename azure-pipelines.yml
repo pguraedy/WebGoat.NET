@@ -77,6 +77,7 @@ jobs:
     enabled: true
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
+      ScanCentralLocation: 'C:\Fortify_ScanCentral_Client\bin'
       buildFile: c:\agent\_work\1\s\WebGoat.NET.sln
       FodConnection: 'FOD_WG'
       ReleaseOptions: 0
