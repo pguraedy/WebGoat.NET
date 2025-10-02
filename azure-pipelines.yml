@@ -85,6 +85,7 @@ steps:
     fortifyApplicationName: WebGoat.NET
     fortifyApplicationVersion: Dev
     fortifyBuildFailureCriteria: '[fortify priority order]:critical'
+  enabled: false
 
 - task: NexusIqPipelineTask@1
   displayName: 'Nexus IQ policy evaluation'
@@ -111,7 +112,7 @@ steps:
     APISecret: 'NVtLb2ZQpbDc2YzMCE_SXVzaHRMYW5BF50NEVqV3h'
     PurchaseEntitlements: false
     PreferRemediation: false
-  enabled: false
+  enabled: true
 
 - task: FortifyScanCentralSAST@7
   displayName: 'Fortify ScanCentral SAST Assessment'
@@ -139,12 +140,11 @@ steps:
     sscCiToken: '$(Parameters.sscCiToken)'
   enabled: false
 
-- task: NexusIqPipelineTask@2
-  displayName: 'Sonatype IQ policy evaluation'
+- task: FortifyReport@13
   inputs:
-    nexusIqService: Sonatype
-    organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
-    applicationId: WebGoat.NET
-    stage: source
-    scanTargets: '**'
-    enableReachability: true
+    providerType: 'fod'
+    fodUrl: 'https://api.ams.fortify.com'
+    fodApiKey: '$(FORTIFY_API_KEY)'
+    fodApiSecret: '$(FORTIFY_API_SECRET)'
+    appName: 'WebGoat (NET)'
+    appVersion: 'phil_test'
