@@ -77,7 +77,7 @@ jobs:
     enabled: true
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
-      buildFile: pguraedy\WebGoat.NET\WebGoat.NET.sln
+      buildFile: $(BuildParameters.solution)
       FodConnection: 'FOD_WG'
       ReleaseOptions: 0
       ReleaseId: 229633
