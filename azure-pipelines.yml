@@ -1,0 +1,150 @@
+pool:
+  name: Fortify
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
+
+#Your build pipeline references the ‘BuildPlatform’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references the ‘BuildPlatform’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+#Your build pipeline references the ‘BuildConfiguration’ variable, which you’ve selected to be settable at queue time. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it settable at queue time. See https://go.microsoft.com/fwlink/?linkid=865971
+variables:
+  solution: '**\*.sln'
+
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet 6.13.2'
+  inputs:
+    versionSpec: 6.13.2
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: '$(Parameters.solution)'
+
+- task: VSBuild@1
+  displayName: 'Build solution'
+  inputs:
+    solution: '$(Parameters.solution)'
+    vsVersion: "17.0"
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    msbuildArchitecture: x64
+
+- task: VSTest@2
+  displayName: 'Test Assemblies'
+  inputs:
+    testAssemblyVer2: |
+     **\$(BuildConfiguration)\*test*.dll
+     !**\obj\**
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
+  inputs:
+    SearchPattern: '**\bin\**\*.pdb'
+    PublishSymbols: false
+  continueOnError: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: '$(Parameters.ArtifactName)'
+  condition: succeededOrFailed()
+
+- task: "FortifyOnDemandStatic@8"
+  displayName: 'Run Fortify on Demand static assessment'
+  inputs:
+    FortifyProjects: '$(Parameters.FortifyProjects)'
+    ScanCentralLocation: 'Fortify_ScanCentral_Client/bin'
+    FodConnection: 'FOD_WG'
+    ReleaseOptions: 0
+    ReleaseId: 229633
+    EntitlementSelection: 1
+    EntitlementPreference: 1
+    OverrideScanSettings: 2
+    InProgressScanActionType: 1
+    RemediationScanPreference: 2
+    BuildType: msbuild
+    PollingInterval: 0
+    PolicyFailAction: 0
+  enabled: false
+
+- task: FortifySCA@7
+  displayName: 'Fortify SCA Scan'
+  inputs:
+    licenseFile: 'C:\tomcat\fortify.license'
+    fortifyBuildId: WebGoat
+    runFortifyUpload: true
+    fortifyServerName: 'Software Security Center'
+    fortifyApplicationName: WebGoat.NET
+    fortifyApplicationVersion: Dev
+    fortifyBuildFailureCriteria: '[fortify priority order]:critical'
+
+- task: NexusIqPipelineTask@1
+  displayName: 'Nexus IQ policy evaluation'
+  inputs:
+    nexusIqService: nexus
+    organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
+    applicationId: WebGoat.NET
+    stage: release
+  enabled: false
+
+- task: FortifyDynamicAssessment@7
+  displayName: 'Run Fortify WebInspect dynamic assessment on '
+  inputs:
+    ScanSettings: default
+    APIRoot: adsffs7893456879jkdfskj
+    ScanResultsLocation: 'ssc_repo'
+  enabled: false
+
+- task: FortifyOnDemandDynamic@7
+  displayName: 'Run Fortify on Demand dynamic assessment on '
+  inputs:
+    ReleaseId: 214568
+    APIKey: 'c2YzMCE_SXVzaHRMYW5BNVtLb2ZQNEVqV3hpbDF50'
+    APISecret: 'NVtLb2ZQpbDc2YzMCE_SXVzaHRMYW5BF50NEVqV3h'
+    PurchaseEntitlements: false
+    PreferRemediation: false
+  enabled: false
+
+- task: FortifyScanCentralSAST@7
+  displayName: 'Fortify ScanCentral SAST Assessment'
+  inputs:
+    scanCentralCtrlUrl: '$(Parameters.scanCentralCtrlUrl)'
+    scanCentralClientToken: '$(Parameters.scanCentralClientToken)'
+    sscUrl: '$(Parameters.sscUrl)'
+    sscCiToken: '$(Parameters.sscCiToken)'
+    uploadToSSC: true
+    applicationName: WebGoat.NET
+    applicationVersion: 2.3
+    buildTool: msbuild
+    buildFile: WebGoat.NET.sln
+    skipBuild: false
+    excludeDisabledProjects: false
+    quiet: false
+    downloadDebugLogs: false
+  enabled: false
+
+- task: FortifyScanCentralDAST@7
+  displayName: 'Fortify ScanCentral DAST Assessment'
+  inputs:
+    scanCentralDastApiUrl: ' http://usguraedy02:8281/dastsensor'
+    scanCentralCiCdToken: 8792453780
+    sscCiToken: '$(Parameters.sscCiToken)'
+  enabled: false
+
+- task: NexusIqPipelineTask@2
+  displayName: 'Sonatype IQ policy evaluation'
+  inputs:
+    nexusIqService: Sonatype
+    organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
+    applicationId: WebGoat.NET
+    stage: source
+    scanTargets: '**'
+    enableReachability: true
