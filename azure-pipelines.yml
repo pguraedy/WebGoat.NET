@@ -78,7 +78,7 @@ jobs:
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
       ScanCentralLocation: Fortify_ScanCentral_Client/bin
-      FodConnection: b1e932bd-31c6-46cf-b212-65124515961c
+      FodConnection: 'FOD_WG'
       ReleaseOptions: 0
       ReleaseId: 229633
       EntitlementSelection: 1
