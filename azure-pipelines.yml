@@ -4,7 +4,7 @@ variables:
 - name: BuildParameters.ArtifactName
   value: drop
 - name: BuildParameters.FortifyProjects
-  value: WebGoatReport
+  value: WebGoat
 - name: BuildParameters.sscCiToken
   value: d36ccf73-5cb2-470a-9c4f-ed3e342f6194
 - name: BuildParameters.scanCentralClientToken
@@ -77,9 +77,7 @@ jobs:
     enabled: true
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
-      ScanCentralLocation: 'C:\Fortify_ScanCentral_Client\bin'
-      buildFile: c:\agent\_work\1\s\WebGoat.NET.sln
-      FodConnection: 'FOD_WG'
+      FodConnection: FOD_WG
       ReleaseOptions: 0
       ReleaseId: 229633
       EntitlementSelection: 1
@@ -90,58 +88,7 @@ jobs:
       BuildType: msbuild
       PollingInterval: 0
       PolicyFailAction: 0
-  - task: NexusIqPipelineTask@1
-    displayName: Nexus IQ policy evaluation
-    enabled: False
-    inputs:
-      nexusIqService: 23e49b71-9330-4065-bc03-9fb5a10ac018
-      organizationId: 70d59b4b079a45a6b6c0bfe10fa069e2
-      applicationId: WebGoat.NET
-      stage: release
-  - task: FortifyDynamicAssessment@7
-    displayName: 'Run Fortify WebInspect dynamic assessment on '
-    enabled: False
-    inputs:
-      ScanSettings: default
-      APIRoot: adsffs7893456879jkdfskj
-      ScanResultsLocation: ssc_repo
-  - task: FortifyOnDemandDynamic@7
-    displayName: 'Run Fortify on Demand dynamic assessment on '
-    enabled: False
-    inputs:
-      ReleaseId: 214568
-      APIKey: '$(FORTIFY_API_KEY)'
-      APISecret: '$(FORTIFY_API_SECRET)'
-      PurchaseEntitlements: false
-      PreferRemediation: false
-  - task: FortifyScanCentralSAST@7
-    displayName: Fortify ScanCentral SAST Assessment
-    enabled: False
-    inputs:
-      scanCentralCtrlUrl: $(BuildParameters.scanCentralCtrlUrl)
-      scanCentralClientToken: $(BuildParameters.scanCentralClientToken)
-      sscUrl: $(BuildParameters.sscUrl)
-      sscCiToken: $(BuildParameters.sscCiToken)
-      uploadToSSC: true
-      applicationName: WebGoat.NET
-      applicationVersion: 2.3
-      applicationVersionId: 78902
-      buildTool: msbuild
-      buildFile: WebGoat.NET.sln
-      skipBuild: false
-      excludeDisabledProjects: false
-      includeTest: false
-      includeNodeModules: false
-      overwrite: false
-      quiet: false
-      downloadDebugLogs: false
-  - task: FortifyScanCentralDAST@7
-    displayName: Fortify ScanCentral DAST Assessment
-    enabled: False
-    inputs:
-      scanCentralDastApiUrl: ' http://usguraedy02:8281/dastsensor'
-      scanCentralCiCdToken: 8792453780
-      sscCiToken: $(BuildParameters.sscCiToken)
+
   - task: FortifyReport@13
     inputs:
       providerType: 'fod'
