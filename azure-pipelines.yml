@@ -21,7 +21,7 @@ trigger:
 name: $(date:yyyyMMdd)$(rev:.r)
 jobs:
 - job: Job_1
-  displayName: Build WebGoat.NET Report
+  displayName: Build WebGoat.NET
   pool:
     name: Fortify
   steps:
@@ -70,11 +70,11 @@ jobs:
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
   - task: FortifyOnDemandStatic@8
     displayName: Run Fortify on Demand static assessment
-    enabled: true
+    enabled: False
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
-      FodConnection: FOD_WG
-      BuildFile: 'C:\agent\_work\2\s\WebGoat.NET.sln'
+      FodConnection: b1e932bd-31c6-46cf-b212-65124515961c
+      ScanCentralLocation: 'C:\Fortify_ScanCentral_Client\bin'
       ReleaseOptions: 0
       ReleaseId: 229633
       EntitlementSelection: 1
@@ -85,7 +85,6 @@ jobs:
       BuildType: msbuild
       PollingInterval: 0
       PolicyFailAction: 0
-
   - task: FortifyReport@13
     inputs:
       providerType: 'fod'
