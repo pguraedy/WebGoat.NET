@@ -4,7 +4,7 @@ variables:
 - name: BuildParameters.ArtifactName
   value: drop
 - name: BuildParameters.FortifyProjects
-  value: WebGoatReport
+  value: WebGoat
 - name: BuildParameters.sscCiToken
   value: d36ccf73-5cb2-470a-9c4f-ed3e342f6194
 - name: BuildParameters.scanCentralClientToken
