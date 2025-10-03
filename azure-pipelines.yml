@@ -9,10 +9,6 @@ variables:
   value: d36ccf73-5cb2-470a-9c4f-ed3e342f6194
 - name: BuildParameters.scanCentralClientToken
   value: 0a9ee484-2ef1-4d50-91e1-2eab2cdf1542
-- name: BuildParameters.scanCentralCtrlUrl
-  value: http://usguraedy02:8883/scancentral-ctrl
-- name: BuildParameters.sscUrl
-  value: http://usguraedy02:8081/ssc/
 - name: FORTIFY_API_KEY
   value: 5bca5531-60dc-4e97-a90e-14eb02867cbf
 - name: FORTIFY_API_SECRET
