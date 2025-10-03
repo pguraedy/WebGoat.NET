@@ -93,4 +93,4 @@ jobs:
       fodApiKey: '$(FORTIFY_API_KEY)'
       fodApiSecret: '$(FORTIFY_API_SECRET)'
       appName: 'WebGoat (NET)'
-      appVersion: 'phil_test'
+      appVersion: 'aviator'
