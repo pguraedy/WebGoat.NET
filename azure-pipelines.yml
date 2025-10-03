@@ -68,13 +68,12 @@ jobs:
       PathtoPublish: $(build.artifactstagingdirectory)
       ArtifactName: $(BuildParameters.ArtifactName)
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
-  - task: FortifyOnDemandStatic@8
-    displayName: Run Fortify on Demand static assessment
+  - task: FortifyOnDemandStatic@9
+    displayName: 'Run Fortify on Demand static assessment'
     enabled: true
     inputs:
-      FortifyProjects: $(BuildParameters.FortifyProjects)
-      FodConnection: FOD_WG
-      ScanCentralLocation: 'C:\Fortify_ScanCentral_Client\bin'
+      FortifyProjects: '$(Parameters.FortifyProjects)'
+      FodConnection: 'FOD_WG'
       ReleaseOptions: 0
       ReleaseId: 229633
       EntitlementSelection: 1
@@ -83,8 +82,10 @@ jobs:
       InProgressScanActionType: 1
       RemediationScanPreference: 2
       BuildType: msbuild
+      BuildFile: '$(Build.SourcesDirectory)'
       PollingInterval: 0
       PolicyFailAction: 0
+
   - task: FortifyReport@13
     inputs:
       providerType: 'fod'
