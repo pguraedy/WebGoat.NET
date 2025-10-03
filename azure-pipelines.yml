@@ -70,9 +70,9 @@ jobs:
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
   - task: FortifyOnDemandStatic@9
     displayName: 'Run Fortify on Demand static assessment'
-    enabled: true
+    enabled: True
     inputs:
-      FortifyProjects: '$(Parameters.FortifyProjects)'
+      FortifyProjects: WebGoat
       FodConnection: 'FOD_WG'
       ReleaseOptions: 0
       ReleaseId: 229633
