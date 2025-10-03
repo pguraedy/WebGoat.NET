@@ -70,10 +70,10 @@ jobs:
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
   - task: FortifyOnDemandStatic@8
     displayName: Run Fortify on Demand static assessment
-    enabled: False
+    enabled: true
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
-      FodConnection: b1e932bd-31c6-46cf-b212-65124515961c
+      FodConnection: FOD_WG
       ScanCentralLocation: 'C:\Fortify_ScanCentral_Client\bin'
       ReleaseOptions: 0
       ReleaseId: 229633
