@@ -74,7 +74,7 @@ jobs:
     inputs:
       FortifyProjects: $(BuildParameters.FortifyProjects)
       FodConnection: FOD_WG
-      BuildFile: 'C:\agent\_work\1\s\WebGoat.NET.sln'
+      BuildFile: 'C:\agent\_work\2\s\WebGoat.NET.sln'
       ReleaseOptions: 0
       ReleaseId: 229633
       EntitlementSelection: 1
