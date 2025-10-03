@@ -75,7 +75,7 @@ jobs:
       FortifyProjects: WebGoat
       FodConnection: 'FOD_WG'
       ReleaseOptions: 0
-      ReleaseId: 229633
+      ReleaseId: 1321954
       EntitlementSelection: 1
       EntitlementPreference: 1
       OverrideScanSettings: 2
